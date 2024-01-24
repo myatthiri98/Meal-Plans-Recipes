@@ -1,13 +1,14 @@
-import { Pressable, StyleSheet, Image } from 'react-native';
+import { Pressable, StyleSheet } from 'react-native';
 import React from 'react';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-const IconButton = ({ imageSource, color, onPress }) => {
+const IconButton = ({icon,color,onPress}) => {
   return (
     <Pressable
       onPress={onPress}
       style={({ pressed }) => pressed && styles.pressed}
     >
-      <Image source={imageSource} style={{ width: 24, height: 24, tintColor: color }} />
+      <Ionicons name={icon} size={24} color={color} />
     </Pressable>
   );
 }

@@ -8,7 +8,7 @@ import MealDetailScreen from './screens/MealDetailScreen';
 import FavoritesScreen from './screens/FavoritesScreen.js';
 import CategoriesScreen from './screens/CategoriesScreen';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import FavoritesContextProvider from './store/context/favorites-context.js'
 const Stack = createNativeStackNavigator();
 
 const Drawer = createDrawerNavigator();
@@ -47,6 +47,7 @@ const DrawerNavigator = () => {
 
 const App = () => {
   return (
+    <FavoritesContextProvider>
     <NavigationContainer>
       <StatusBar
         animated={true}
@@ -75,6 +76,7 @@ const App = () => {
         />
       </Stack.Navigator>
     </NavigationContainer>
+    </FavoritesContextProvider>
   );
 };
 
